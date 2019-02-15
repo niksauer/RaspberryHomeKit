@@ -1,0 +1,48 @@
+{
+    "bridge": {
+        "name": "Homebridge",
+        "username": "CC:22:3D:E3:CE:30",
+        "port": 51826,
+        "pin": "031-45-154"
+    },
+    "accessories": [
+        {
+            "accessory": "pilight",
+            "name": "LEDs außen",
+            "device": "ceiling1",
+            "sharedWS": true
+        },
+        {
+            "accessory": "pilight",
+            "name": "LEDs innen",
+            "device": "ceiling2",
+            "sharedWS": true
+        }
+    ],
+    "platforms": [
+        {
+            "platform": "MagicHome-Platform",
+            "debug": false,
+            "lights": [
+                {
+                    "name": "LED Leiste",
+                    "ip": "192.168.0.43",
+                    "setup": "RGBW",
+                    "purewhite": false,
+                    "timeout": 10000
+                }
+            ],
+            "presetSwitches": [
+                {
+                    "name": "Cross Fade",
+                    "ips": {
+                        "192.168.0.43": "0,199,255"
+                    },
+                    "preset": "seven_color_cross_fade",
+                    "speed": 40,
+                    "shouldTurnOff": false
+                }
+            ]
+        }
+    ]
+}

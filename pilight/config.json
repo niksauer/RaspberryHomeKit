@@ -1,0 +1,92 @@
+{
+	"devices": {
+		"ceiling1": {
+			"protocol": [ "intertechno_switch" ],
+			"id": [{
+				"id": 35625984,
+				"unit": 1
+			}],
+			"state": "on"
+		},
+		"ceiling2": {
+			"protocol": [ "intertechno_switch" ],
+			"id": [{
+				"id": 35625984,
+				"unit": 2
+			}],
+			"state": "on"
+		},
+		"RFA": {
+			"protocol": [ "elro_800_switch" ],
+			"id": [{
+				"systemcode": 31,
+				"unitcode": 1
+			}],
+			"state": "on"
+		},
+		"RFB": {
+			"protocol": [ "elro_800_switch" ],
+			"id": [{
+				"systemcode": 31,
+				"unitcode": 2
+			}],
+			"state": "on"
+		}
+	},
+	"rules": {},
+	"gui": {
+		"ceiling1": {
+			"name": "Decken LEDs außen",
+			"group": [ "Room" ],
+			"media": [ "all" ]
+		},
+		"ceiling2": {
+			"name": "Decken LEDs innen",
+			"group": [ "Room" ],
+			"media": [ "all" ]
+		},
+		"RFA": {
+			"name": "RF A",
+			"group": [ "Room" ],
+			"media": [ "all" ]
+		},
+		"RFB": {
+			"name": "RF B",
+			"group": [ "Room" ],
+			"media": [ "all" ]
+		}
+	},
+	"settings": {
+		"log-level": 6,
+		"pid-file": "/var/run/pilight.pid",
+		"log-file": "/var/log/pilight.log",
+		"standalone": 0,
+		"webserver-enable": 1,
+		"webserver-root": "/usr/local/share/pilight/webgui",
+		"webserver-http-port": 5001,
+		"webserver-https-port": 5002,
+		"webserver-cache": 1,
+		"whitelist": "",
+		"gpio-platform": "raspberrypi3"
+	},
+	"hardware": {
+		"433gpio": {
+			"sender": 0,
+			"receiver": 2
+		}
+	},
+	"registry": {
+		"webserver": {
+			"ssl": {
+				"certificate": {
+					"location": "/etc/pilight/pilight.pem"
+				}
+			}
+		},
+		"pilight": {
+			"version": {
+				"current": "8.1.4"
+			}
+		}
+	}
+}

@@ -1,0 +1,4 @@
+homebridge/*
+!homebridge/config.json
+!homebridge/package.json
+!homebridge/startup.sh

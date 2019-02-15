@@ -1,0 +1,20 @@
+version: '2'
+services:
+  homebridge:
+    image: oznu/homebridge:raspberry-pi
+    restart: always
+    network_mode: host
+    volumes:
+      - ./homebridge:/homebridge
+    environment:
+      - PGID=1000
+      - PUID=1000
+      - HOMEBRIDGE_CONFIG_UI=1
+      - HOMEBRIDGE_CONFIG_UI_PORT=8080
+  pilight:
+    build: pilight/
+    restart: always
+    network_mode: host
+    volumes:
+      - ./pilight/config.json:/etc/pilight/config.json
+    privileged: true

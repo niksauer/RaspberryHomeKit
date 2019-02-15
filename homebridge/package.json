@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "homebridge-dummy": "^0.3.0",
+    "homebridge-magichome-platform": "git+https://git@github.com/niksauer/homebridge-magichome-platform.git",
+    "homebridge-pilight": "^2.0.0"
+  }
+}
