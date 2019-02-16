@@ -24,6 +24,11 @@ sudo apt install git
 sudo apt install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" 
 
+# SSH Keys
+mkdir -p .ssh
+scp ~/.ssh/id_rsa.pub Raspberry:/home/pi # copy your public key to raspberry pi
+cat ~/id_rsa.pub >> ~/.ssh/authorized_keys
+
 # DOCKER
 curl -sSL https://get.docker.com | sh
 sudo usermod -aG docker pi
